@@ -50,7 +50,7 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks:{
  
-    async jwt({ token, user }) {
+    async jwt({ token, user}) {
       if (user) {
         token.id=user._id?.toString()
         token.isVerified=user.isverified;
@@ -69,6 +69,7 @@ export const authOptions: NextAuthOptions = {
     }
   return session
     }, },
+
   pages:{
     signIn:'/sign-in'
   },
